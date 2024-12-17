@@ -1,0 +1,23 @@
+% Define the parameters
+Hbase  = 0.340;
+d3 = 0.4;
+d5 = 0.4;
+Htool = 0.0;
+
+% Create the DH chain.
+%
+%        theta     d        a       alpha   prismatic
+DHlbr = [ 0        0        0      -pi/2      0      ;...
+          0        0        0       pi/2      0      ;...
+          0        d3       0       pi/2      0      ;...
+          0        0        0      -pi/2      0      ;...
+          0        d5       0      -pi/2      0      ;...
+          0        0        0       pi/2      0      ;...
+          0        0        0       0         0      ];
+
+% Create the base frame
+Tbase = [eye(3) [0 ; 0 ; Hbase] ; 0 0 0 1];
+
+% Create the tool frame w.r.t. DH output frame
+Ttool = [eye(3) [0 ; 0; Htool] ; 0 0 0 1];
+
